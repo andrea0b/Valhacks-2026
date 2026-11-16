@@ -1,0 +1,44 @@
+{
+ "H2": {
+  "window": "H2",
+  "net": 1693587.6649999998,
+  "revenue": 4052075.59,
+  "walk": 2792,
+  "penalty": 2358487.925,
+  "accepted": 5255,
+  "requests": 14341,
+  "occupancy": 0.9063364930070786,
+  "revenue_per_occupied_room_night": 109.50667756668378,
+  "net_per_hotel": {
+   "Downtown Hotel": 1283625.7199999997,
+   "Seaside Hotel": 409961.94500000007
+  },
+  "stack_weights": {
+   "lr": 0.39404647240965546,
+   "lgb": 0.33290025221927455,
+   "cb": 0.26094095448456295
+  },
+  "stack_intercept": -0.1832668130550689
+ },
+ "FY": {
+  "window": "FY",
+  "net": 6328439.625000001,
+  "revenue": 6996639.700000001,
+  "walk": 1350,
+  "penalty": 668200.075,
+  "accepted": 23876,
+  "requests": 44247,
+  "occupancy": 0.8293193844067468,
+  "revenue_per_occupied_room_night": 102.154147260224,
+  "net_per_hotel": {
+   "Downtown Hotel": 3551516.6250000005,
+   "Seaside Hotel": 2776923.0000000005
+  },
+  "stack_weights": {
+   "lr": 0.4671684264940357,
+   "lgb": 0.13409376372285264,
+   "cb": 0.34466081834914086
+  },
+  "stack_intercept": -0.18682988491060357
+ }
+}

@@ -1,0 +1,49 @@
+<!-- Closing: how a decision is made end to end, how it is used, the answer -->
+<style>
+.pipe-d{position:absolute;left:120px;top:640px;width:1680px;display:grid;grid-template-columns:520px 1fr;column-gap:80px;align-items:center;min-height:300px}
+.pipe-d .big{font-size:150px;font-weight:700;letter-spacing:-.05em;line-height:.95;color:var(--blue-ink);white-space:nowrap}
+.pipe-d h3{font-size:44px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
+.pipe-d p{font-size:34px;line-height:1.35;color:var(--ink2);max-width:980px}
+.code{position:absolute;left:120px;top:290px;width:1000px;background:var(--navy);color:var(--on-navy);border-radius:28px;padding:44px 52px;font:500 30px/1.6 ui-monospace,Consolas,'Courier New',monospace;white-space:pre}
+.code i{font-style:normal;color:var(--on-navy2)}
+.code b{font-weight:500;color:var(--blue-lt)}
+.dep-k{position:absolute;left:1220px;top:290px;width:580px;display:flex;flex-direction:column;gap:56px}
+.quote{position:absolute;left:120px;top:800px;width:1680px;font-size:34px;line-height:1.4;color:var(--ink2);border-top:3px solid var(--tint);padding-top:34px}
+.quote b{color:var(--ink)}
+.endh .hl{display:inline-block;line-height:.85;padding:.07em .1em .02em;margin:0 -.04em}
+.endnum{position:absolute;left:120px;top:640px;display:flex;gap:140px}
+.endnum .kpi b{color:var(--on-navy)}
+.endnum .kpi span{color:var(--on-navy2)}
+</style>
+<section class="slide light" id="s-pipeline" aria-label="From request to decision">
+  <h2 class="h2 rise">From request to <span class="hl">decision</span></h2>
+  <svg id="pipe" class="abs" viewBox="0 0 1680 260" width="1680" height="260" style="left:120px;top:300px" role="img" aria-label="Five stages from a booking request to an accept or reject decision; click a stage for details"></svg>
+  <p class="cap abs rise" style="--i:2;left:120px;top:590px">Click a stage</p>
+  <div class="pipe-d" id="pipeD"></div>
+</section>
+
+<section class="slide light" id="s-deploy" aria-label="Ready to run">
+  <h2 class="h2 rise">Ready to <span class="hl">run</span></h2>
+  <div class="code rise" style="--i:1"><i># once, before the year starts</i>
+sol = <b>Solution</b>(commitments, capacity)
+
+<i># once per request, in order</i>
+ok = sol.<b>decide</b>(booking)
+
+<i># why, in one sentence</i>
+print(sol.<b>explain</b>())</div>
+  <div class="dep-k">
+    <div class="kpi rise" style="--i:2"><b id="depMs" class="c-blue">2.1 ms</b><span>per decision</span></div>
+    <div class="kpi rise" style="--i:3"><b id="depN">26,439</b><span>requests decided in the 2017 evaluation</span></div>
+  </div>
+  <p class="quote rise" style="--i:4" id="depQ"></p>
+</section>
+
+<section class="slide dark" id="s-end" aria-label="The answer">
+  <h1 class="rise endh" style="position:absolute;left:120px;top:150px;width:1500px;font-size:150px;font-weight:700;line-height:1.04;letter-spacing:-.04em">Accept the guests who are <span class="hl">worth the room</span></h1>
+  <div class="endnum rise" style="--i:2">
+    <div class="kpi"><b id="endNet">€5.43M</b><span>net revenue, 2017 evaluation</span></div>
+    <div class="kpi"><b id="endVs" class="c-blue">+29%</b><span>over classic overbooking</span></div>
+  </div>
+  <p class="cap abs rise" style="--i:3;left:120px;top:900px;width:1500px">Method, code and notebooks are in the repository. Press the left arrow to revisit any slide; the replay and the request box run the real model.</p>
+</section>

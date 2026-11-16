@@ -1,0 +1,47 @@
+<!-- Decision: from a probability to accept / reject -->
+<style>
+.req{position:absolute;left:120px;top:326px;width:1680px;display:flex;align-items:baseline;gap:14px;font-size:34px;color:var(--ink)}
+.req b{font-weight:700}
+.chk{position:absolute;left:120px;top:410px;width:1680px;display:flex;flex-direction:column;gap:28px}
+.chk .card{display:grid;grid-template-columns:480px 800px 1fr;column-gap:30px;align-items:center;background:var(--paper);border-radius:28px;padding:20px 40px;height:200px}
+.chk .q{display:flex;gap:22px;align-items:center}
+.chk .q .n{font-size:64px;font-weight:700;color:var(--blue-ink);letter-spacing:-.04em;width:44px}
+.chk .q b{display:block;font-size:34px;line-height:1.15;font-weight:700;letter-spacing:-.01em}
+.chk .q span{display:block;margin-top:8px;font-size:24px;line-height:1.25;color:var(--ink2)}
+.chk .res{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.chk .res .eq{font-size:40px;font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+#chkWhy{display:flex;align-items:center}
+</style>
+<section class="slide light" id="s-fraction" aria-label="A booking is a fraction of a room">
+  <h2 class="h2 rise">A booking is a <span class="hl">fraction</span> of a room</h2>
+  <p class="cap abs rise" style="--i:1;left:120px;top:236px">Downtown, night of 15 September 2016: every booking accepted for it in the second half, filled to its show-up probability.</p>
+  <svg id="frac" class="abs" viewBox="0 0 1680 540" width="1680" height="540" style="left:120px;top:300px" role="img" aria-label="76 bookings, each drawn as a room filled to its probability of showing up"></svg>
+  <div class="abs rise" style="--i:3;left:120px;top:870px;width:1680px;display:flex;align-items:center;gap:90px">
+    <div class="kpi"><b id="fBook">76</b><span>bookings accepted</span></div>
+    <div class="kpi"><b id="fExp" class="c-blue">58.6</b><span id="fExpL">guests expected</span></div>
+    <button class="btn" id="fRoll" type="button" style="margin-left:auto">Who shows up?</button>
+  </div>
+</section>
+
+<section class="slide light" id="s-bid" aria-label="The bid price of a night">
+  <h2 class="h2 rise">A night has a <span class="hl">bid price</span></h2>
+  <div class="abs rise" style="--i:1;left:120px;top:236px;width:1680px;display:flex;gap:90px;align-items:flex-end">
+    <div style="width:700px"><p class="cap" id="bidFreeL" style="margin-bottom:4px"></p><input type="range" id="bidFree" aria-label="Free rooms"></div>
+    <div style="width:700px"><p class="cap" id="bidRateL" style="margin-bottom:4px"></p><input type="range" id="bidRate" aria-label="Nightly rate of the request"></div>
+  </div>
+  <svg id="bid" class="abs" viewBox="0 0 1680 600" width="1680" height="600" style="left:120px;top:330px" role="img" aria-label="Bid price of the night as a function of free rooms, with the request's rate as a dashed line"></svg>
+  <p class="cap abs rise" style="--i:3;left:120px;top:960px;width:1680px" id="bidNote"></p>
+</section>
+
+<section class="slide light" id="s-checks" aria-label="Two checks decide">
+  <h2 class="h2 rise">Two checks <span class="hl">decide</span></h2>
+  <div class="abs rise" id="chkTabs" style="--i:1;left:120px;top:236px;display:flex;gap:10px"></div>
+  <p class="req" id="chkReq"></p>
+  <div class="chk" id="chkBody"></div>
+  <p class="abs" id="chkWhy" style="left:120px;top:900px;width:1680px;font-size:30px;line-height:1.35;color:var(--ink2)"></p>
+</section>
+
+<section class="slide light" id="s-lever" aria-label="Where the gain comes from">
+  <h2 class="h2 rise">Where the gain <span class="hl">comes from</span></h2>
+  <svg id="lever" class="abs" viewBox="0 0 1680 700" width="1680" height="700" style="left:120px;top:300px" role="img" aria-label="Waterfall from classic overbooking to the bid-price policy, and the variants that were rejected"></svg>
+</section>

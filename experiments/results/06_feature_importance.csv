@@ -1,0 +1,37 @@
+column,label,theme,mean_abs,share
+guest_type,guest type,guest profile,0.515420595271192,0.1433529912911484
+agent,booking agent,agent,0.3756166138674492,0.10446956460523232
+log_block_rank,identical requests already seen (group),group of identical requests,0.35666859509855287,0.09919958666006905
+sales_segment,sales segment,guest profile,0.3558514713405009,0.09897232151768531
+log_lead,booking lead time,lead time,0.2390628178592284,0.0664901060629519
+hotel,hotel,hotel,0.16312805301079425,0.0453705082356949
+lead_bin,lead-time band,lead time,0.15138299217528306,0.04210387585989478
+block_rank,identical requests already seen (group),group of identical requests,0.13976384602511385,0.038872263906167166
+agent_te,agent's historical cancel rate,agent,0.13317367021695942,0.037039350313072525
+days_ahead,booking lead time,lead time,0.13050912113462285,0.03629826413044908
+in_block,part of a group,group of identical requests,0.11311325792188173,0.03145998438276848
+log_loose_rank,similar requests the same day,group of identical requests,0.09806012367008429,0.02727328357356429
+sales_channel,channel,guest profile,0.09611124036872613,0.02673124421097331
+arrival_dow,arrival weekday,calendar,0.06693307825511588,0.01861597513220611
+room_type,room type,guest profile,0.06691323068170525,0.018610454962767038
+nightly_rate,nightly rate,rate and stay,0.05781670682298205,0.01608045535184122
+log_day_agent,requests from the same agent that day,group of identical requests,0.048624980926170326,0.013523977371478446
+meal,meal plan,guest profile,0.048172048698143545,0.013398004155942424
+arrival_month,arrival month,calendar,0.04693196809327633,0.013053102796196956
+booking_dow,request weekday,calendar,0.04647243256747562,0.0129252930174794
+season,season,calendar,0.04044072886851695,0.011247706254822657
+company_flag,company booking,guest profile,0.0385480193277599,0.01072129039794356
+log_demand_week,requests already seen for the week,demand already seen,0.03351036146030866,0.009320175791685828
+arrival_day,arrival day,calendar,0.029550533202636425,0.008218835971460257
+adults,adults,guest profile,0.02728356463268129,0.00758832813252709
+weekday_nights,weekday nights,rate and stay,0.02412204862092318,0.006709021443080726
+arrival_week,arrival week,calendar,0.021605279265150993,0.006009036966616393
+children,children,guest profile,0.020437176526708366,0.005684154679747303
+nights,number of nights,rate and stay,0.02041463714842061,0.0056778858435210505
+month_cos,seasonality,calendar,0.019140401810980114,0.005323485090220011
+log_demand_date,requests already seen for the night,demand already seen,0.018118792468828873,0.00503934674481434
+agent_none,booking without an agent,agent,0.016516636766353135,0.004593742097713996
+weekend_share,share of weekend nights,rate and stay,0.013752504083545662,0.0038249589096894855
+month_sin,seasonality,calendar,0.011506147618728603,0.003200183878012102
+weekend_nights,weekend nights,rate and stay,0.007762264240556938,0.0021589044137645948
+babies,babies,guest profile,0.003028588658417698,0.0008423358467974845

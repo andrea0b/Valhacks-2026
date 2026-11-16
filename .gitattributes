@@ -1,0 +1,5 @@
+# One line-ending convention, so the hashes in evaluation/freeze_manifest.json hold on every platform
+* text=auto eol=lf
+*.csv -text
+*.joblib binary
+*.png binary

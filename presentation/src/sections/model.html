@@ -1,0 +1,36 @@
+<!-- Model: how the cancellation probability is built and why it can be trusted -->
+<section class="slide light" id="s-honest" aria-label="A shuffled test flatters the model">
+  <h2 class="h2 rise">A shuffled test <span class="hl">flatters</span> the model</h2>
+  <div class="seg abs rise" id="seg-honest" style="--i:1;left:120px;top:226px"><button type="button" class="on" data-k="final features">Final features</button><button type="button" data-k="+ post-booking columns">+ post-booking columns</button></div>
+  <svg id="honest" class="abs" viewBox="0 0 1130 640" width="1130" height="640" style="left:120px;top:310px" role="img" aria-label="AUC of the cancellation model with shuffled folds and with three temporal cuts"></svg>
+  <div class="abs" style="left:1320px;top:330px;width:480px;display:flex;flex-direction:column;gap:70px">
+    <div class="kpi"><b id="kRand" style="color:var(--grey)">0.87</b><span>AUC on shuffled folds</span></div>
+    <div class="kpi"><b id="kTime" class="c-blue">0.73</b><span>AUC on months the model has not seen</span></div>
+  </div>
+</section>
+
+<section class="slide light" id="s-tried" aria-label="What we tried">
+  <h2 class="h2 rise">What helped, what <span class="hl">hurt</span></h2>
+  <div class="seg abs rise" id="seg-tried" style="--i:1;right:120px;top:104px"><button type="button" class="on" data-k="lr">Logistic regression</button><button type="button" data-k="lgb">LightGBM</button></div>
+  <svg id="tried" class="abs" viewBox="0 0 1680 620" width="1680" height="620" style="left:120px;top:290px" role="img" aria-label="Change in log-loss of each variant compared with the final features, average of three temporal cuts"></svg>
+  <p class="cap abs rise" style="--i:3;left:120px;top:940px;width:1680px">Change in log-loss against the final feature set, average of three temporal cuts. Lower is better.</p>
+</section>
+
+<section class="slide light" id="s-calib" aria-label="Probabilities you can bet on">
+  <h2 class="h2 rise">Probabilities you can <span class="hl">bet on</span></h2>
+  <div class="abs rise" id="pills-calib" style="--i:1;left:120px;top:240px;display:flex;gap:10px"></div>
+  <svg id="calib" class="abs" viewBox="0 0 1000 700" width="1000" height="700" style="left:120px;top:320px" role="img" aria-label="Calibration diagram: predicted against observed cancellation rate"></svg>
+  <svg id="calib-ll" class="abs" viewBox="0 0 700 600" width="700" height="600" style="left:1140px;top:340px" role="img" aria-label="Log-loss of every recipe at the 1 July 2016 cut"></svg>
+</section>
+
+<section class="slide light" id="s-stack" aria-label="The stack is not stable">
+  <h2 class="h2 rise">The stack's weights <span class="hl">move</span></h2>
+  <svg id="stackw" class="abs" viewBox="0 0 1680 560" width="1680" height="560" style="left:120px;top:290px" role="img" aria-label="Weight of each member in the stacking meta-model at three temporal cuts"></svg>
+  <p class="lead abs rise" style="--i:3;left:120px;top:920px;width:1680px">The plain average of the three is <span class="hl">better calibrated</span> and has nothing to fit.</p>
+</section>
+
+<section class="slide light" id="s-drivers" aria-label="What drives a cancellation">
+  <h2 class="h2 rise">What drives a <span class="hl">cancellation</span></h2>
+  <div class="abs rise" id="themePills" style="--i:1;left:120px;top:232px;display:flex;gap:8px;flex-wrap:nowrap"></div>
+  <svg id="themes" class="abs" viewBox="0 0 1680 680" width="1680" height="680" style="left:120px;top:330px" role="img" aria-label="The twenty inputs that move the cancellation forecast most, ten per column"></svg>
+</section>

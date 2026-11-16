@@ -1,0 +1,63 @@
+<!-- Opening: the question, the task, what is at stake -->
+<style>
+.cov-h1{position:absolute;left:120px;top:176px;font-size:210px;font-weight:700;line-height:.9;letter-spacing:-.04em}
+.cov-h1 .hl{display:inline-block;line-height:.8;padding:.07em .1em .02em;margin:0 -.04em}
+.cov-kick{left:120px;top:96px;font-size:40px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#6E97F5}
+.cov-sub{left:120px;top:640px;width:760px}
+#facade{left:1160px;top:100px;width:640px;height:569px}
+#facade .w{fill:#26335F;transition:fill .5s ease}
+#facade .w.lit{fill:#6E97F5}
+#facade .w.claim{fill:#fff}
+.tk{position:absolute;left:1160px;top:730px;width:640px;background:var(--navy3);border-radius:24px;padding:26px 34px;display:flex;flex-direction:column;gap:10px;opacity:0}
+.tk.show{animation:tkin .6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes tkin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.tk .t1{font-size:26px;color:var(--on-navy2)}
+.tk .t2{font-size:44px;font-weight:700;letter-spacing:-.02em;line-height:1;white-space:nowrap}
+.tk .row{display:flex;align-items:center;gap:16px;justify-content:space-between}
+.stamp{font-size:26px;font-weight:700;padding:8px 24px;border-radius:999px;opacity:0;transform:scale(1.6) rotate(-6deg)}
+.tk.show .stamp{animation:stamp .35s cubic-bezier(.2,.9,.3,1.3) .5s forwards}
+@keyframes stamp{to{opacity:1;transform:none}}
+.stamp.ok{background:#6E97F5;color:var(--navy)}
+.stamp.no{background:var(--on-navy);color:var(--navy)}
+#journey .st{position:absolute;width:400px;margin-left:-200px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+#journey .rw{height:190px;display:flex;align-items:center;justify-content:center}
+#journey .ring{border-radius:50%;display:flex;align-items:center;justify-content:center;color:#F8F9FC}
+#journey .ring svg{width:46%;height:46%}
+#journey .st h3{font-size:44px;font-weight:700;letter-spacing:-.02em;margin-top:22px}
+#journey .st p{font-size:30px;line-height:1.3;color:var(--ink2);max-width:380px}
+#journey .track{position:absolute;height:10px;border-radius:5px;background:var(--grey2)}
+#journey .when{position:absolute;font-size:26px;color:var(--ink3);text-align:center;width:300px;margin-left:-150px}
+#journey .token{position:absolute;top:186px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 8px rgba(42,91,215,.18);opacity:0}
+.on #journey .token{animation:travel 5.2s cubic-bezier(.45,0,.25,1) .6s forwards}
+@keyframes travel{0%{left:200px;opacity:1}18%{left:627px}32%{left:627px}60%{left:1053px}72%{left:1053px}96%{left:1480px;opacity:1}100%{left:1480px;opacity:0}}
+#ladder .bar{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+#ladder.go .bar{transform:scaleY(1)}
+#ladder .bar.ours,#ladder.go .bar.ours{transform:scaleY(0)}
+#ladder.go.rev .bar.ours{transform:scaleY(1);transition-delay:.1s}
+#ladder .fade{opacity:0;transition:opacity .6s}
+#ladder.go .fade{opacity:1;transition-delay:.8s}
+#ladder .oursl{opacity:0;transition:opacity .5s}
+#ladder.rev .oursl{opacity:1;transition-delay:.8s}
+#ladder.rev .zt{opacity:0;transition-delay:0s}
+</style>
+<section class="slide dark" id="s-cover" aria-label="Overbooked: who gets the room?">
+  <p class="abs rise cov-kick">Overbooked</p>
+  <h1 class="rise cov-h1">Who gets<br>the <span class="hl">room</span>?</h1>
+  <div class="abs cov-sub">
+    <p class="rise" style="--i:2;font-size:46px;line-height:1.2;color:var(--on-navy2)">Which booking requests should two hotels accept?</p>
+    <p class="rise cap" style="--i:3;margin-top:28px">Valhacks hackathon · winning solution</p>
+  </div>
+  <svg id="facade" class="abs" viewBox="0 0 720 640" role="img" aria-label="Hotel facade whose windows light up as bookings are accepted"></svg>
+  <div class="tk" id="tk"><p class="t1" id="tk1"></p><div class="row"><p class="t2" id="tk2"></p><p class="stamp" id="tkS"></p></div><p class="t1" id="tk3"></p></div>
+</section>
+
+<section class="slide light" id="s-task" aria-label="Decide now, learn later">
+  <h2 class="h2 rise">Decide now, <span class="hl">learn later</span></h2>
+  <div class="abs" id="journey" style="left:120px;top:330px;width:1680px;height:640px"></div>
+</section>
+
+<section class="slide light" id="s-stakes" aria-label="What a good decision is worth">
+  <h2 class="h2 rise">What a good decision is <span class="hl">worth</span></h2>
+  <button class="btn abs rise" id="reveal" type="button" style="--i:3;right:120px;top:104px">Show where we landed</button>
+  <svg id="ladder" class="abs" viewBox="0 0 1680 720" width="1680" height="720" style="left:120px;top:250px" role="img" aria-label="Net revenue of three reference strategies on the 2016 replay: 3.79 million euros without overbooking, 5.26 with classic overbooking, 7.76 with perfect foresight; this system reaches 6.32"></svg>
+</section>

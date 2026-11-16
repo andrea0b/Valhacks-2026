@@ -1,0 +1,99 @@
+<!-- Data: what 78,132 bookings say -->
+<style>
+.fields{display:flex;flex-direction:column;gap:56px}
+.fields h3{font-size:34px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.fields h3 i{width:20px;height:20px;border-radius:50%;display:inline-block}
+.fields .chips{display:flex;flex-wrap:wrap;gap:12px}
+.fields .chips span{font-size:28px;font-weight:500;padding:12px 22px;border-radius:999px;background:var(--paper)}
+.fields .known span{background:var(--blue-tint);color:var(--blue-ink)}
+.fields .never span{background:var(--red-tint);color:#8E2626}
+.fields .later span{color:var(--ink3)}
+.stack-bar{display:flex;height:84px;border-radius:16px;overflow:hidden}
+.stack-bar div{display:flex;align-items:center;padding:0 22px;font-size:30px;font-weight:700;color:#F8F9FC;white-space:nowrap}
+</style>
+
+<section class="slide light" id="s-anatomy" aria-label="What a request tells us">
+  <h2 class="h2 rise">What a request <span class="hl">tells us</span></h2>
+  <div class="abs fields rise" style="--i:1;left:120px;top:270px;width:1060px">
+    <div class="known"><h3><i style="background:var(--blue)"></i>Known when the request arrives</h3><div class="chips"><span>hotel</span><span>arrival date</span><span>nights</span><span>nightly rate</span><span>how far ahead</span><span>adults and children</span><span>meal plan</span><span>room type</span><span>sales segment</span><span>channel</span><span>agent</span><span>company</span><span>guest type</span></div></div>
+    <div class="later"><h3><i style="background:var(--grey)"></i>Only known later, or drifts over time</h3><div class="chips"><span>amendments</span><span>waitlist days</span><span>special requests</span><span>country</span><span>past stays</span><span>past cancellations</span></div></div>
+    <div class="never"><h3><i style="background:var(--red)"></i>Never used</h3><div class="chips"><span>deposit (organisers' rule)</span><span>booking ID (sorted by outcome)</span></div></div>
+  </div>
+  <div class="abs rise" style="--i:3;left:1340px;top:280px;width:460px;display:flex;flex-direction:column;gap:56px">
+    <div class="kpi"><b id="an-n">78,132</b><span>bookings with their outcome</span></div>
+    <div class="kpi"><b>18</b><span>months of arrivals, July 2015 to December 2016</span></div>
+    <div class="kpi"><b>227</b><span>rooms in two hotels: a city hotel and a resort</span></div>
+  </div>
+</section>
+
+<section class="slide light" id="s-demand" aria-label="Demand is far above capacity">
+  <h2 class="h2 rise">Demand is far above <span class="hl">capacity</span></h2>
+  <div id="heatDT" class="abs" style="left:120px;top:250px"></div>
+  <div id="heatSS" class="abs" style="left:120px;top:484px"></div>
+  <div class="abs rise" style="--i:3;left:120px;top:740px;width:1680px;display:flex;align-items:center;gap:40px">
+    <p style="font-size:30px;width:540px;white-space:nowrap">Show nights with demand of at least</p>
+    <input type="range" id="thr" min="0.5" max="2" step="0.05" value="1" style="width:560px" aria-label="Demand threshold as a multiple of capacity">
+    <p class="lead c-blue" id="thrv">1.00× the rooms</p>
+  </div>
+  <p class="lead abs rise" style="--i:5;left:120px;top:880px;width:1680px">So the question is not how many to accept, but <span class="hl">whom</span>.</p>
+</section>
+
+<section class="slide light" id="s-season" aria-label="The same room, a different price">
+  <h2 class="h2 rise">The same room, a <span class="hl">different price</span></h2>
+  <svg id="season" class="abs" viewBox="0 0 1680 680" width="1680" height="680" style="left:120px;top:270px" role="img" aria-label="Nightly rate by arrival month in 2016, median and interquartile range for each hotel"></svg>
+</section>
+
+<section class="slide light" id="s-lead" aria-label="Late bookers are the reliable ones">
+  <h2 class="h2 rise">Late bookers are the <span class="hl">reliable</span> ones</h2>
+  <div class="seg abs rise" id="leadseg" style="--i:2;left:120px;top:226px"><button type="button" class="on" data-k="all">Both hotels</button><button type="button" data-k="Downtown">Downtown</button><button type="button" data-k="Seaside">Seaside</button></div>
+  <svg id="bubbles" class="abs" viewBox="0 0 1680 560" width="1680" height="560" style="left:120px;top:300px" role="img" aria-label="Five lead-time bands as bubbles sized by the share of guests who show up and coloured by cancellation rate"></svg>
+  <div class="abs rise" style="--i:4;left:120px;top:890px;width:1680px;display:flex;gap:120px;align-items:baseline">
+    <div style="display:flex;align-items:baseline;gap:22px"><p class="lead c-blue" id="callA" style="font-size:60px;letter-spacing:-.03em"></p><p class="cap">cancellation rate, latest vs earliest</p></div>
+    <div style="display:flex;align-items:baseline;gap:22px"><p class="lead" id="callB" style="font-size:60px;letter-spacing:-.03em"></p><p class="cap">median nightly rate in every band</p></div>
+  </div>
+</section>
+
+<section class="slide light" id="s-leak" aria-label="Row IDs give the answer away">
+  <h2 class="h2 rise">Row IDs give the <span class="hl hl-r">answer away</span></h2>
+  <div class="seg abs rise" id="leakseg" style="--i:1;right:120px;top:104px"><button type="button" class="on" data-k="Downtown">Downtown</button><button type="button" data-k="Seaside">Seaside</button></div>
+  <svg id="leak" class="abs" viewBox="0 0 1100 640" width="1100" height="640" style="left:120px;top:290px" role="img" aria-label="Cancellation rate by position of the booking ID within its booking day, in tenths"></svg>
+  <div class="abs rise" style="--i:3;left:1340px;top:330px;width:460px;display:flex;flex-direction:column;gap:48px">
+    <div class="kpi"><b id="lk-a" class="c-red"></b><span>of the first tenth of a day's IDs were cancelled</span></div>
+    <div class="kpi"><b id="lk-b"></b><span>of the last tenth</span></div>
+    <p class="body" style="color:var(--ink)">The file is sorted by outcome. The ID is never used, and same-day requests are replayed in random order.</p>
+  </div>
+</section>
+
+<section class="slide light" id="s-drift" aria-label="Some signals change meaning">
+  <h2 class="h2 rise">Some signals <span class="hl">change meaning</span></h2>
+  <svg id="prt" class="abs" viewBox="0 0 760 600" width="760" height="600" style="left:120px;top:300px" role="img" aria-label="Share of cancellations recorded as Portugal by arrival quarter, falling from 93% to about half"></svg>
+  <svg id="calib0" class="abs" viewBox="0 0 760 600" width="760" height="600" style="left:1040px;top:300px" role="img" aria-label="Average predicted cancellation rate with and without country and guest history, against the true rate"></svg>
+  <div class="seg abs rise" id="driftseg" style="--i:2;left:1040px;top:226px"><button type="button" class="on" data-k="2016-01-01">January cut</button><button type="button" data-k="2016-04-01">April</button><button type="button" data-k="2016-07-01">July</button></div>
+</section>
+
+<section class="slide light" id="s-groups" aria-label="Groups cancel together">
+  <h2 class="h2 rise">Groups <span class="hl">cancel together</span></h2>
+  <div class="abs rise" style="--i:1;left:120px;top:270px;width:1680px">
+    <div class="stack-bar" id="grpbar"></div>
+    <p class="cap" id="grpcap" style="margin-top:14px"></p>
+  </div>
+  <svg id="risk" class="abs" viewBox="0 0 1000 480" width="1000" height="480" style="left:120px;top:480px" role="img" aria-label="Probability that guests exceed the free rooms for three bookings mixes with the same 42 expected guests"></svg>
+  <div class="abs rise" style="--i:3;left:1200px;top:480px;width:600px;display:flex;flex-direction:column;gap:24px">
+    <p style="font-size:30px;font-weight:600;line-height:1.3">42 guests expected from 60 bookings.<br>Chance they exceed <span id="freev" class="c-blue">50</span> free rooms:</p>
+    <input type="range" id="freer" min="34" max="56" step="1" value="50" aria-label="Free rooms that night">
+    <div id="riskk" style="display:flex;flex-direction:column;gap:14px"></div>
+  </div>
+</section>
+
+<section class="slide light" id="s-personas" aria-label="Customers differ in value and risk">
+  <h2 class="h2 rise">Customers differ in <span class="hl">value and risk</span></h2>
+  <div class="seg abs rise" id="perseg" style="--i:1;left:120px;top:226px"><button type="button" class="on" data-k="Downtown">Downtown</button><button type="button" data-k="Seaside">Seaside</button></div>
+  <svg id="pers" class="abs" viewBox="0 0 1680 700" width="1680" height="700" style="left:120px;top:310px" role="img" aria-label="Customer personas: average nightly rate against cancellation rate, bubble size is the share of room-nights requested; dashed curves join equal expected value"></svg>
+</section>
+
+<section class="slide light" id="s-partners" aria-label="Agencies split into four partner types">
+  <h2 class="h2 rise">Agencies split into <span class="hl">four types</span></h2>
+  <svg id="agencies" class="abs" viewBox="0 0 1100 700" width="1100" height="700" style="left:120px;top:260px" role="img" aria-label="Agencies with at least 100 bookings: value index against cancellation rate, bubble size is volume, colour is partner type"></svg>
+  <div class="abs" id="ptypes" style="left:1290px;top:300px;width:510px;display:flex;flex-direction:column;gap:36px"></div>
+  <p class="abs cap rise" style="--i:4;left:1290px;top:780px;width:510px">Agencies with at least 100 bookings. Click a type to isolate it.</p>
+</section>

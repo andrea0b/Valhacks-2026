@@ -1,0 +1,59 @@
+<!-- Live: the real policy replaying six weeks of 2016, and the real model scoring a request you type -->
+<style>
+.drv{display:flex;flex-direction:column;gap:12px}
+.drv .d{display:grid;grid-template-columns:330px 1fr;align-items:center;column-gap:16px;font-size:26px;color:var(--ink2)}
+.dark .drv .d{color:var(--on-navy2)}
+.drv .bar{position:relative;height:28px;background:var(--tint2);border-radius:6px}
+.dark .drv .bar{background:var(--navy2)}
+.drv .bar i{position:absolute;top:0;bottom:0;border-radius:6px}
+.drv .bar u{position:absolute;left:50%;top:-6px;bottom:-6px;border-left:3px dashed currentColor;text-decoration:none;opacity:.7}
+#feed{position:absolute;left:120px;top:260px;width:1040px;display:flex;flex-direction:column;gap:10px}
+#feed .r{display:grid;grid-template-columns:38px 1fr 110px 250px;align-items:center;column-gap:18px;background:var(--navy2);border-radius:18px;padding:0 26px;height:70px;font-size:28px;cursor:pointer;border:3px solid transparent;transition:border-color .2s,background .2s}
+#feed .r:hover{background:var(--navy3)}
+#feed .r.sel{border-color:var(--blue-lt)}
+#feed .r .dot{width:18px;height:18px;border-radius:50%}
+#feed .r .p{color:var(--on-navy2);text-align:right;font-variant-numeric:tabular-nums}
+#feed .r .chip{text-align:center;font-size:24px;padding:6px 0}
+.chip.acc{background:var(--blue-lt);color:var(--navy)}
+.chip.rej{background:var(--navy3);color:var(--on-navy)}
+#detail{position:absolute;left:1230px;top:260px;width:570px}
+#detail h3{font-size:30px;font-weight:600;color:var(--on-navy2);margin-bottom:16px}
+#detail .k{font-size:30px;line-height:1.45;color:var(--on-navy)}
+#detail .k span{color:var(--on-navy2)}
+.try label{display:block;font-size:26px;color:var(--ink2);margin-bottom:2px}
+.try .row{margin-bottom:34px}
+.try select{width:100%}
+</style>
+<section class="slide dark" id="s-console" aria-label="The replay, live">
+  <h2 class="h2 rise">The replay, <span class="hl">live</span></h2>
+  <div class="abs rise" style="--i:1;right:120px;top:104px;display:flex;gap:18px;align-items:center">
+    <button class="btn" id="cPlay" type="button" style="padding:12px 30px;font-size:26px">Pause</button>
+    <div class="seg" id="cSpeed"><button type="button" data-k="1">×1</button><button type="button" class="on" data-k="10">×10</button><button type="button" data-k="60">×60</button></div>
+  </div>
+  <div id="feed" aria-live="off"></div>
+  <div id="detail"></div>
+  <div class="abs" style="left:120px;top:960px;width:1680px;display:flex;align-items:center;gap:36px;font-size:26px;color:var(--on-navy2)">
+    <span id="cDay" style="width:200px;font-variant-numeric:tabular-nums"></span>
+    <input type="range" id="cScrub" aria-label="Position in the replay" style="flex:1">
+    <span id="cCount" style="font-variant-numeric:tabular-nums;text-align:right;width:760px"></span>
+  </div>
+</section>
+
+<section class="slide light try" id="s-try" aria-label="Try a request">
+  <h2 class="h2 rise">Try a <span class="hl">request</span></h2>
+  <div class="abs" style="left:120px;top:250px;width:700px">
+    <div class="row"><div class="seg" id="tHotel"><button type="button" class="on" data-k="0">Downtown</button><button type="button" data-k="1">Seaside</button></div></div>
+    <div class="row"><label id="tDayL"></label><input type="range" id="tDay" aria-label="Day the request arrives"></div>
+    <div class="row"><label id="tLeadL"></label><input type="range" id="tLead" aria-label="Days until arrival"></div>
+    <div class="row"><label id="tNightsL"></label><input type="range" id="tNights" min="1" max="14" aria-label="Nights"></div>
+    <div class="row"><label id="tRateL"></label><input type="range" id="tRate" min="30" max="320" aria-label="Nightly rate"></div>
+  </div>
+  <div class="abs" style="left:900px;top:250px;width:900px">
+    <div style="display:flex;align-items:center;gap:44px">
+      <div class="kpi"><b id="tP">0%</b><span>cancels</span></div>
+      <span class="chip ok" id="tChip" style="font-size:44px;padding:16px 40px">accept</span>
+      <p class="mid" id="tWhy" style="font-size:44px;margin-left:auto;white-space:nowrap"></p>
+    </div>
+  </div>
+  <svg id="tChart" class="abs" viewBox="0 0 900 540" width="900" height="540" style="left:900px;top:470px" role="img" aria-label="Bid price of every coming night on the day of the request"></svg>
+</section>

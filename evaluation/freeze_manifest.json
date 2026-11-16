@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-11-16T12:45:01+00:00",
+  "python": "3.14.7",
+  "packages": {
+    "pandas": "3.1.1",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10",
+    "joblib": "1.6.0"
+  },
+  "files": {
+    "solution.py": "496f87f509fe6a0b3e9e0c1b0e8876fdc8006f31326b470715f2b6a6250b0e37",
+    "models/final.joblib": "97d47f08bc204fe3f8068e41b2971568d80f166e3b7a7bbe0bda7d523aa04dcd",
+    "requirements.txt": "c5a30d12b529250bee82d8800d5dccb0d8ec51e314755b3e3634bd5d21156d39",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/baselines.py": "b4572e0e5ab5c5aa872f81c6e218f5e51da8e5791268e54e6ccffd31d5bc0c14",
+    "src/build_final.py": "a7588128652599434b1fed7e2be42dada404c9b4f774e1dd552e822a1ce2ab6d",
+    "src/customers.py": "6ecbafe7c1371be9302e42db97dc8101cf067edb0db6a62ca9b8a9b79bfb16ec",
+    "src/explain.py": "fbab3b2d9446ed32610518589b616203cc29ce2ef10a2291a4c231eb74e5f0da",
+    "src/features.py": "27c7ce2eeee067b58c912281ac17b5915a5cf4bc128bd3bc06db57d807db9f97",
+    "src/plotting.py": "47c985cda755873c2f0447309a936cdd455a4ae65b8392f7ede9b0b243e925d5",
+    "src/policy.py": "65af03d806cbadeab3cf3a0636f29473608afb653781957c439eefe90e5b4966",
+    "src/simulator.py": "850190ab1de46a27a9e4ee7f818dc9e5f6cc4a2cb65f8e6637180bdfeb826ba4",
+    "src/stream_model.py": "fdce124291b2686214dfec1848520b587c0e2e42e77343f4c07fdcef23f38ab1"
+  }
+}

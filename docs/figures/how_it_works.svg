@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 440" width="1500" height="440" font-family="Inter Tight, Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0F1830"/></marker>
+  </defs>
+  <rect width="1500" height="440" rx="28" fill="#EEF0F4"/>
+  <g font-size="19" font-weight="600" fill="#6B7391" letter-spacing="3">
+    <text x="40" y="50">EACH REQUEST</text>
+    <text x="40" y="236">EACH NIGHT</text>
+  </g>
+  <g stroke="#0F1830" stroke-width="3" fill="none" marker-end="url(#a)">
+    <path d="M240 115H284"/><path d="M530 115H574"/><path d="M850 115H894"/>
+    <path d="M240 305H284"/><path d="M530 305H574"/>
+    <path d="M1130 115H1160V190H1184"/>
+    <path d="M850 305H1160V250H1184"/>
+    <path d="M1250 295V326"/><path d="M1390 295V326"/>
+  </g>
+  <g font-size="25" font-weight="600" fill="#0F1830" text-anchor="middle">
+    <rect x="40" y="70" width="200" height="90" rx="18" fill="#fff"/><text x="140" y="124">Booking request</text>
+    <rect x="290" y="70" width="240" height="90" rx="18" fill="#fff"/><text x="410" y="108">Request-time</text><text x="410" y="138">features</text>
+    <rect x="580" y="70" width="270" height="90" rx="18" fill="#2A5BD7"/><text x="715" y="108" fill="#fff">Cancellation</text><text x="715" y="138" fill="#fff">model</text>
+    <rect x="900" y="70" width="230" height="90" rx="18" fill="#fff"/><text x="1015" y="108">q = 1 − p(cancel)</text><text x="1015" y="138" font-size="19" font-weight="500" fill="#6B7391">share of a room</text>
+    <rect x="40" y="260" width="200" height="90" rx="18" fill="#fff"/><text x="140" y="314">History</text>
+    <rect x="290" y="260" width="240" height="90" rx="18" fill="#fff"/><text x="410" y="298">Demand forecast</text><text x="410" y="328">per night</text>
+    <rect x="580" y="260" width="270" height="90" rx="18" fill="#2A5BD7"/><text x="715" y="298" fill="#fff">Bid price</text><text x="715" y="328" fill="#fff">per night</text>
+    <rect x="1190" y="155" width="260" height="140" rx="22" fill="#0F1830"/>
+    <text x="1320" y="205" fill="#fff">rate ≥ bid price</text><text x="1320" y="238" fill="#fff">and expected shows</text><text x="1320" y="271" fill="#fff">fit the free rooms?</text>
+    <rect x="1190" y="330" width="120" height="56" rx="28" fill="#2A5BD7"/><text x="1250" y="367" fill="#fff" font-size="22">Accept</text>
+    <rect x="1330" y="330" width="120" height="56" rx="28" fill="#fff" stroke="#0F1830" stroke-width="3"/><text x="1390" y="367" font-size="22">Reject</text>
+  </g>
+  <g font-size="19" font-weight="500" fill="#6B7391" text-anchor="middle">
+    <text x="715" y="190">LR · LightGBM · CatBoost</text>
+    <text x="715" y="380">rate of the marginal guest still to come</text>
+    <text x="1320" y="420">each with a written reason</text>
+  </g>
+</svg>

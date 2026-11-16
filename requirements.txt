@@ -1,0 +1,15 @@
+# core
+pandas>=3.0
+numpy>=2.0
+scikit-learn>=1.9
+joblib
+# cancellation model
+lightgbm
+catboost
+interpret-core        # EBM: only in the comparison experiments, not in the shipped model
+# figures and notebooks
+matplotlib
+ipykernel
+nbformat
+nbclient
+nbconvert

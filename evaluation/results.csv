@@ -1,0 +1,4 @@
+solution,description,net_revenue_eur,run_at
+no_overbooking,Accept only up to the free rooms,3149034,2026-11-16 13:32
+average_rate,Classic overbooking at each hotel's average show rate,4193263,2026-11-16 13:32
+model,Shipped system: stack of three models + bid price per night (models/final.joblib),5425157,2026-11-16 13:32

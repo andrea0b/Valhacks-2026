@@ -1,0 +1,22 @@
+<!-- Economics: why overbooking pays, and where it stops paying -->
+<section class="slide light" id="s-accept" aria-label="Accept more than you have">
+  <h2 class="h2 rise">Accept <span class="hl">more</span> than you have</h2>
+  <div class="abs rise" style="--i:1;left:120px;top:236px;width:1680px;display:flex;align-items:center;gap:56px">
+    <div class="seg" id="seg3"><button type="button" class="on" data-k="0">Downtown</button><button type="button" data-k="1">Seaside</button></div>
+    <div style="width:620px"><p class="cap" id="nlabel" style="margin-bottom:4px"></p><input type="range" id="nslider" aria-label="Bookings accepted per night"></div>
+    <div id="presets" style="display:flex;gap:10px"><button type="button" class="pill" data-p="cap">Capacity</button><button type="button" class="pill" data-p="classic">Classic rule</button><button type="button" class="pill" data-p="best">Best</button></div>
+  </div>
+  <svg id="dist" class="abs" viewBox="0 0 1680 420" width="1680" height="420" style="left:120px;top:340px" role="img" aria-label="Distribution of guests who show up for the chosen number of accepted bookings, with the capacity marked"></svg>
+  <div class="abs rise" style="--i:3;left:120px;top:800px;display:flex;gap:140px">
+    <div class="kpi"><b id="kEmpty">0</b><span>rooms left empty, on average</span></div>
+    <div class="kpi"><b id="kWalk" class="c-red">0</b><span>guests walked, on average</span></div>
+    <div class="kpi"><b id="kNet" class="c-blue">0%</b><span>of a full house, after walk penalties</span></div>
+  </div>
+</section>
+
+<section class="slide light" id="s-toomany" aria-label="How many is too many?">
+  <h2 class="h2 rise">How many is <span class="hl">too many</span>?</h2>
+  <div class="seg abs rise" id="seg4" style="--i:1;right:120px;top:104px"><button type="button" class="on" data-k="0">Downtown</button><button type="button" data-k="1">Seaside</button></div>
+  <svg id="curve" class="abs" viewBox="0 0 1680 560" width="1680" height="560" style="left:120px;top:260px" role="img" aria-label="Expected net revenue as a function of accepted bookings, with the capacity, classic and best points marked"></svg>
+  <p class="lead abs rise" style="--i:3;left:120px;top:870px;width:1680px">A walk costs 2.5 stays, so the best number sits <span class="hl">below</span> the classic rule.</p>
+</section>
